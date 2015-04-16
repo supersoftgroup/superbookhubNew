@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 2, 2015 2:25:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="compositekey.Compositetesting" table="compositetesting" catalog="hibernatebase" optimistic-lock="version">
+        <composite-id name="id" class="compositekey.CompositetestingId">
+            <key-property name="name" type="string">
+                <column name="name" length="20" />
+            </key-property>
+            <key-property name="fname" type="string">
+                <column name="fname" length="20" />
+            </key-property>
+        </composite-id>
+        <property name="id_1" type="java.lang.Integer">
+            <column name="id" />
+        </property>
+        <property name="salary" type="java.lang.Integer">
+            <column name="salary" />
+        </property>
+    </class>
+</hibernate-mapping>
