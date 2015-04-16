@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My page</title>
+ 
+<!-- CSS dependencies -->
+
+<!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ 
+<!-- bootbox code -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+</head>
+<body>
+ 
+<p>Content here. <a class="a" href="#">Alert!</a></p>
+<p class="a">
+    check it
+    </p>
+<!-- JS dependencies -->
+
+
+<script>
+   
+$(document).on("click", ".a", function(e) {
+/*bootbox.alert("Hello world!", function() {
+console.log("Alert Callback");
+});
+
+*/
+
+bootbox.dialog({
+  message: "<label for='tt'>Email id</label><input type='text' id='tt' class='form-control' placeholder='bar' autofocus/>",
+  title: "Custom title",
+  buttons: {
+      main: {
+      label: "Click ME!",
+      className: "btn-primary",
+      callback: function() {
+       // Example.show("Primary button");
+       $("document").ready(function(){
+      //var emailid= ;
+     // Example.show($("#tt").attr("value"));
+               }
+       );
+       //
+      }
+    }
+  }
+});
+});
+
+</script>
+
+<input type="text" id="abab"/>
+</body>
+</html> 

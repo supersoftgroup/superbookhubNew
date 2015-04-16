@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                $(".abc").click(function(){
+                    //$(".divbody").css("display","block");
+                    $(".divbody").animate({
+                        //opacity: '0.5',
+                        ////height: 'toggle',
+                        width: 'toggle'
+                    });
+                });
+            });
+        </script>
+        <style>
+            .body
+            {
+                margin:0px;
+            }
+            .abc
+            {
+                writing-mode:tb-rl;
+                -moz-transform:rotate(270deg);
+                background-color:blue;
+                color:white;
+                -webkit-transform: rotate(270deg);
+                -moz-transform: rotate(270deg);
+                transform: rotate(270deg);
+                position:fixed;
+                top:50%;
+                left:-2.5%;
+                padding-bottom:6px;
+                padding-top:6px;
+                padding-left:6px;
+                padding-right:6px;
+                box-shadow:1px 1px 1px 1px red;
+                margin:0px;
+                border:1px solid blue;
+                float:left;
+                cursor:pointer;
+            }
+            .divbody
+            {
+                /*background:#98bf21;*/
+                background:#ffffff;
+                border:5px solid #98bf21;
+                height:0px;
+                width:0px;
+                position:fixed;
+                top:3%;
+                left:2.5%;
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="abc">
+            Feedback
+        </div>
+        <div class="divbody" style="display:bloack;width:300px;height:600px;" >
+            <h2>Feedback form</h2>
+            <form role="form" style="margin:7px;">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email"/>
+                </div>
+                <div class="form-group">
+                    <label for="moblienumber">Mobile Number:</label>
+                    <input type="number" class="form-control" id="mobilenum" placeholder="Enter Mobile Number"/>
+                </div>
+                <div class="form-group">
+                    <select>
+                        <option> Improve this page</option>
+                        <option>Suggess new Features &amp; Ideas</option>
+                        <option>Shopping Experience</option>
+                        <option>I Love superbookhub</option>
+                        <option>Other--General Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <!--<textarea rows="4" cols="30"></textarea>-->
+                    <textarea rows="4" cols="42"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default btn-success">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

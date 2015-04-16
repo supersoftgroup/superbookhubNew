@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!-- bootbox code -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+        
+       <!-- <link rel="stylesheet" href="css/a1.css">
+        <link rel="stylesheet" href="css/a2.css">
+        <link rel="stylesheet" href="css/a3.css">
+        
+        <!--<style>
+            @import url("css/a1.css");
+            @import url("css/a2.css");
+            @import url("css/a3.css");
+        </style>
+        -->
+        <!--<script src="/home/krishna/NetBeansProjects/superbookhubmain/superbookhub/public_html/libraryfile/bootbox.min.js"></script>
+        <script src="/home/krishna/NetBeansProjects/superbookhubmain/superbookhub/public_html/libraryfile/bootstrap.min.js"></script>
+        -->
+        <style>
+            .wallpage
+            {
+                
+                background-color:#FFFFFF;
+                border:1px solid whitesmoke;
+                box-shadow:10px 10px 10px 10px whitesmoke;
+                display: inline-block;
+                width:200px;
+                height:200px;
+                position:absolute;
+                margin-left: 10%;
+                zoom:5;
+            }
+            .wall
+            {
+                border:1px solid whitesmoke;
+                box-shadow:5px 5px 5px 5px blanchedalmond;
+                display: inline-block;
+                width:200px;
+                height:200px;
+                position:absolute;
+                margin-left: 2%;
+                z-index: inherit;
+            }
+            
+           /* #feedbackright
+            {
+                background:url("images/feedback.jpg") no-repeat scroll 50% 50% #0066CC;
+                display:block;
+                content: "Feedback";
+                height:90px;
+                line-height:0;
+                padding:5px;
+                position:fixed;
+                right:0;
+                /*left:0;*/
+                /*text-indent:0px;
+                top:50%;
+                width:22px;
+            }
+            
+            a#feedbackright:hover
+            {
+                background-color:#FF8B00;
+            }*/
+                
+                
+            #feedback
+            {
+                background:url("images/feedback_tab_white.png") no-repeat scroll 50% 50% #0066CC;
+                display:block;
+                height: 90px;
+                width: 22px;
+                position: fixed;
+                top: 40%;
+                contant:"Feedback";
+                z-index: 999;
+                //transform: rotate(-90deg);
+                //-webkit-transform: rotate(-90deg);
+                //-moz-transform: rotate(-90deg);
+                //-o-transform: rotate(-90deg);
+                //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+                
+
+#feedback a
+{
+    display: block;
+    background: #f00;
+    height: 15px;
+    width: 70px;
+    padding: 8px 16px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: solid 1px #333;
+    border-left: solid 1px #333;
+    border-right: solid 1px #fff;
+}
+
+ a#feedback:hover
+ {
+     background: #06c;
+ }
+        </style>
+        <style>
+                .bootbox-center
+            {
+                position: fixed;
+                //margin-top:50%;
+                top:20%;
+                //alignment-adjust: central;
+                
+                
+            }
+        </style>
+        <style>
+            body
+            {
+                margin:0px;
+                shadow:100px #000000;
+            }
+            .btbox
+            {
+                width:40em;
+                margin-top:50%;
+            }
+            .serboxposition
+            {
+                position:absolute;
+                top:90px;
+                margin-left:30%;
+                border-radius:10px;
+                width:600px;
+            }
+            .kartop
+            {
+                position:absolute;
+                top:13.70%;
+                margin-left:80%;
+                border-radius:5px;
+                width:15%;
+                
+            }
+            .as-right
+            {
+                float:right;
+                width:80%;
+                height:82%;
+            }
+            .as-left
+            {
+                float:right;
+                width:20%;
+            }
+            ver-as-menu
+            {
+                backgroung-color:#E0E0D1;
+            }
+            .data-written
+            {
+                background-color:#F8F8F8;
+            }
+            .foo
+            {
+                background-color:#000000;
+                width:100%;
+                height:30%;
+            }
+            
+            .liststyling
+            {
+                
+                list-style-position:inline;
+            }
+            #footer-con
+            {
+                background-color: #ccffcc;
+                width: 70%;
+                min-width: 950px;
+                height: 90%;
+            }
+            .site
+             {
+                width: 100%;
+                height: 10%;
+                text-align: center;
+                padding-top: 10px;
+                background-color: #000000;
+                color: #33cc33;
+                font-family: serif;
+             }
+             #footer_table li
+             {
+                 padding-top: 10px;
+                 font-size: 12px;
+             }
+             #footer_table li a
+             {
+                 text-decoration: none;
+                 color: #33cc33;
+             }
+             #footer_table li a:hover
+             {
+                 font-weight: bold;
+             }
+             #footer_table td
+             {
+                 border-right: 1px solid #666666;
+             }
+             .headnig
+             {
+                 margin-left: 20px;
+                 margin-top: 20px;
+                 font-size: 20px;
+                 color: #3399ff;
+                 font-weight: bold;
+             }
+             
+
+        </style>
+        
+        
+        <style>
+            .back-to-top
+            {
+                //background: none;
+                //margin: 0;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                top:90%;
+                width: 70px;
+                height: 70px;
+                z-index: 100;
+                display: none;
+                text-decoration: none;
+                color: #ffffff;
+               // background-color: #ff9000;
+            }
+            
+        </style>
+        <script>
+            $(document).ready(function()
+            {
+                var offset = 250; //after 250 px
+                var duration = 300; //300 milli sec
+                $(window).scroll(function()
+                {
+                    if ($(this).scrollTop() > offset)
+                    {
+                        $('.back-to-top').fadeIn(duration);
+                    }
+                    else
+                    {
+                        $('.back-to-top').fadeOut(duration);
+                    }
+                });
+                $('.back-to-top').click(function(event)
+                {
+                    event.preventDefault();
+                    $('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    });
+});
+</script>
+        
+        <script>
+            $(document).on("click", ".fpass", function(e) {
+                bootbox.dialog({
+                    
+                    message: "<h5>Enter your EmailID here to recieve <br>a link to change password. </h5><label style='width:50%;' for='tt1'>Email id</label><input type='email' style='width:50%;' id='tt1' class='form-control' placeholder='Enter Your mail ID' autofocus/><div class='div-fpass' style='width:250px;height:139px;border:2px solid red;position:absolute;top:1%;left:55%;border-top-color:#ffffff;border-bottom-color:#ffffff;border-right-color:#F30E16;'>krishna kapoor<br>krishna kapoor<br>krishna kapoor<br>krishna kapoor<br></div>",
+                    title: "<h1 class='ssssssss' style='color:#F30E16;text-decoration=underline;'>Frogot Your Password</h1>",
+                    class: "fpass",className:"bootbox-center",
+                    buttons: {
+                        main: {
+                            label: "Send Email !@",
+                            className: "btn-danger",
+                            callback: function() {
+                                $("document").ready(function(){
+                                    //var emailid= ;
+                                    // Example.show($("#tt").attr("value"));
+                                    
+                                    
+                                    }
+                                            );
+                                }
+                              }
+                             }
+                     });
+                });
+
+        </script>
+        <script>
+            $(document).on("click", ".sign", function(e) {
+                bootbox.dialog({
+                    message: "<div><label style='width:50%;' for='tt2'>Email id</label><input type='email' style='width:50%;' id='tt2' class='form-control' placeholder='Enter your mail ID' autofocus/><label style='width:50%;' for='tt2a'>Password</label><input type='password' style='width:50%;' id='tt2a' class='form-control' placeholder='password' autofocus/><label style='width:50%;' for='tt2b'>Confirm Password</label><input type='password' style='width:50%;' id='tt2b' class='form-control' placeholder='Re-enter password' autofocus/></div><div id='div-sign' style='width:250px;height:205px;border:2px solid green;position:absolute;top:1%;left:55%;border-top-color:#ffffff;border-bottom-color:#ffffff;border-right-color:#ffffff;'></div>",
+                    title: "<h1 style='color:#20F30E;text-decoration=underline;'>New User Sign Up</h1>",
+                    class: "bootbox-center",
+                    className:"bootbox-center",
+                    buttons: {
+                        main: {
+                            label: "Sign Up Now",
+                            className: "btn-success",
+                            callback: function() {
+                                $("document").ready(function(){
+                                    //var emailid= ;
+                                   // Example.show($("#tt").attr("value"));
+                               }
+                                       );
+                           }
+    }
+  }
+});
+});
+
+        </script>
+        <script>
+      
+      
+      
+      
+      $(document).on("click", ".log", function(e) {
+          bootbox.dialog({
+              message: "<label style='width:50%;' for='tt3a'>Email id</label><input type='email' style='width:50%;' id='tt3a' class='form-control' placeholder='Enter your mail ID' autofocus/><label style='width:50%;' for='tt3b'>Password</label><input type='password' style='width:50%;' id='tt3b' class='form-control' placeholder='Password' autofocus/><div class='checkbox'><label><input type='checkbox'> Remember me</label></div><a class='fpass' id='ffpass' href='#'>Forgot Password</a><div id='div-log' style='width:250px;height:148px;border:2px solid blue;position:absolute;top:1%;left:55%;border-top-color:#ffffff;border-bottom-color:#ffffff;border-right-color:#ffffff;'></div>",
+              title: "<h1 style='color:#0E55F3;text-decoration=underline;'>Log In</h1>",
+              class: "log",
+              className:"bootbox-center",
+              buttons: {
+                  main: {
+                      label: "Login Now",
+                      className: "btn-primary",
+                      callback: function() {
+                          $("document").ready(function(){
+                              //var emailid= ;
+                              // Example.show($("#tt").attr("value"));
+                          }
+       );
+      }
+    }
+  }
+});
+});
+
+        </script>
+        <script>
+/*            $(window).load(function() {
+                bootbox.dialog({
+              message: "<label style='width:100%;' for='tt3a'>Enter Email ID for Subscription</label><input type='email' style='width:100%;' id='tt3a' class='form-control' placeholder='Enter your mail ID' autofocus/>",
+              title: "<h1 style='color:#FFCC00;text-decoration=underline;'>Subscription</h1>",
+              className:"bootbox-center",
+              buttons: {
+                  main: {
+                      label: "Subscribe",
+                      className: "btn-warning",
+                      callback: function() {
+                          $("document").ready(function(){
+                              //var emailid= ;
+                              // Example.show($("#tt").attr("value"));
+                          }
+       );
+      }
+    }
+  }
+});
+            });
+            */
+        </script>
+        <script>
+            $("#ffpass").click(function()
+            {
+                $(".log").hide();
+            });
+        </script>
+        
+        <script>
+            $("ul li").hover(function()
+            {
+                $("this").attr("class","active");
+            },
+            function(){
+            });
+            
+         </script>
+    </head>
+    <body class="body">
+        
+        <header class="nav" >
+            <!--  feedback start -->
+            
+            
+            <!--
+            
+            <div>
+                <a id="feedback" href="#">Feedback</a>
+            </div>-->
+            <!--  feedback end -->
+            <!--  search & kart & login part end -->
+            
+                <div style="background:url('images/book1.jpg') ; border:2px solid #000000;width:100%;height:12em;">
+                   <!-- <img style="position:absolute;width:100%;height:18.4em;" src="images/book2.jpg" alt="logo"/>-->
+                   <!-- <img style="position:absolute;top:5%;width:30%;height:18%;" src="images/logo.jpg" alt="logo"/> -->
+                    <div class="serboxposition col-sm-3">
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                       <div class="input-group">
+                            <input type="text" style="border-radius:10px 0px 0px 10px ;" class="form-control" placeholder="Serch your topic">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" style="border-radius:0px 10px 10px 0px;" type="button">
+                                    Search
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="button"  class="kartop btn btn-primary btn-md">Add to Cart</button>
+                    <aside style="float:right;position: static;">
+                    <nav>
+                        <ul>
+                            <li style="display:inline-block"><a class="" href="feedback.html"><span style=" color:  white;">Feedback&nbsp;&nbsp;|</span></a></li>
+                            <li style="display:inline-block"><span class="glyphicon glyphicon-map-marker" style="color:white;"><a class="" style="color:#FFFFFF;" href="#">Track Your Order&nbsp;&nbsp;|</a></span></li>
+                            <li style="display:inline-block"><span class="glyphicon glyphicon-earphone" style="color:white;"><a class="" style="color:#FFFFFF;" href="#">Contact Us&nbsp;&nbsp;|</a></span></li>
+                            <li style="display:inline-block"><span class="glyphicon glyphicon-hand-down" style="color:white;"><a class="sign" style="color:#FFFFFF;" href="#">Signup&nbsp;&nbsp;|</a></span></li>
+                            <li style="display:inline-block"><span class="glyphicon glyphicon-thumbs-up" style="color:white;"><a class="log" style="color:#FFFFFF;" href="#">Login&nbsp;&nbsp;</a></span></li>
+                        </ul>
+                    </nav>
+                    </aside>
+                </div>
+            
+            <!--  search & kart & login part end -->
+            
+            
+        </header>
+        <!-- menu start -->
+        <nav class="navbar navbar-default" role="navigation" Style="background-image:linear-gradient( 45deg, #ccffcc, #33cc33 );";>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    
+                </button>
+            </div>
+            <div class="collapse navbar-collapse  navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a>
+                    <li><a href="#">About Us</a></li>
+                    <li class="list-group">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Book Store <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Best Sellers</a></li>
+                            <li><a href="#">Academic &amp; Professional</a></li>
+			    <li><a href="#">Entrance Exam</a></li>
+                            <li><a href="#">Literature &amp; Fiction</a></li>
+			    <li><a href="#">Child &amp; Teens</a></li>
+			    <li><a href="#">Comics &amp; Graphic Novels</a></li>
+                            <li><a href="#">Business &amp; Management</a></li>
+			    <li><a href="#">BioGraphy &amp; Auto-Biography </a></li>
+			    <li><a href="#">History &amp; Politics</a></li>
+			    <li><a href="#">Entrance Exam</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Old Books</a></li>
+                    <li style="float:right;">
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Notifications</a></li>
+                            <li><a href="#">Contact Us </a></li>
+			    <li><a href="#">New Items</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- menu end -->
+        <!-- categories start -->
+        <div class="sidebar-offcanvas" style="border:1px solid window;width:20%;height:60%; padding:0em;padding-top:0em;float:left;margin:0px;">
+            <div class="col-md-12" style="background-image:linear-gradient( 45deg, #ccffcc, #33cc33 ); ">
+                
+                <ul class="nav nav-pills nav-stacked">
+                    <li><h2>Categories</h2></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Academic &amp; Professional </a></li>
+		    <li><a href="#">Entrance Exam</a></li>
+                    <li><a href="#">Literature &amp; Fiction</a></li>
+		    <li><a href="#">Child &amp; Teens</a></li>
+		    <li><a href="#">Comics &amp; Graphic Novels</a></li>
+                    <li><a href="#">Business &amp; Management</a></li>
+		    <li><a href="#">BioGraphy &amp; Auto-Biography </a></li>
+		    <li><a href="#">History &amp; Politics</a></li>
+		    <li><a href="#">Entrance Exam</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- categories end -->
+        
+        <!-- slide bar start -->
+        <div style="background-color:#FFFFFF; border:0px solid window;margin:0px;margin-bottom:0px; width:100%;height:42em;">
+        <aside class="as-right" style="margin:0px;">
+            <div style="width:75%; height:72.7%;margin:0px;"  id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <div style="border:1px solid window;" class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img style="width:700px; height:350px;" src="images/c.jpg" alt="Book">
+                    </div>
+                    <div class="item">
+                        <img style="width:700px; height:350px;" src="images/d.jpg" alt="Book">
+                    </div>
+                    <div class="item">
+                        <img style="width:700px; height:350px;" src="images/e.jpg" alt="Book">
+                    </div>
+                    <div class="item">
+                        <img style="width:700px; height:350px;" src="images/f.jpg" alt="Book">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            <div style="border:1px solid #000000;width:75%; height:27.5%;margin:0px;"></div>
+                
+            
+            
+        </aside>
+            <!-- Site news start-->
+            <div class="sidebar-offcanvas" style="border:1px solid window;position: absolute;top:38%;left:80%;width:20%; height:72%; padding:0em;padding-top:0em;float:left;margin:0px;">
+            <div class="col-md-12" style="background-image:linear-gradient( 45deg, #ffffff, #33cc33 ); ">
+                
+                <ul class="nav nav-pills nav-stacked">
+                    <li><h2>Site News</h2></li>
+                    <li><a href="#">Author News</a></li>
+                    <li><a href="#">Open Session</a></li>
+		    <li><a href="#">Discounts</a></li>
+                    <li><a href="#">Shop Is Open</a></li>
+		    <li><a href="#">New Shop</a></li>
+		    <li><a href="#">Indian</a></li>
+                    <li><a href="#">Site Review</a></li>
+		    <li><a href="#">Clone</a></li>
+		    <li><a href="#">Immediate Solution</a></li>
+		    <li><a href="#">Besties</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+            <!-- Site news end-->
+            
+            
+            
+            <!-- list start -->
+            
+            
+            
+            
+            
+            <section style="position:absolute;top:114%;left:-1%;margin-left:0px;margin-bottom:100px; background-color:#FFFFFF; padding: 0px;  border:0px solid black;margin:0px; width:80%;height:24em;" >
+                <div class="row container-fluid" style=" margin-bottom: 50px;">
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase; text-align:center;">Literature</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail"/>
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li ><a href="#" >Action &amp; Advanture</a></li>
+                                <li ><a href="#">Literary Collection</a></li>
+                                <li ><a href="#">Fantasy</a></li>
+                                <li ><a href="#">Comics &amp; Graphics Novels</a></li>
+                                <li ><a href="#">Indian Writing</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase; text-align: center;">Non Fiction</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail">
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li><a href="#" >Biographies &amp; Autobiographies</a></li>
+                                <li><a href="#">Business &amp; Investing</a></li>
+                                <li><a href="#">Health &amp; Fitness</a></li>
+                                <li><a href="#">History &amp; Politics</a></li>
+                                <li><a href="#">Self Help</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase; text-align: center;">Academic</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail">
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li><a href="#">Entrence Exams</a></li>
+                                <li><a href="#">School Books</a></li>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Medicine</a></li>
+                                <li><a href="#">Commerce</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="row container-fluid" style=" margin-bottom:50px;">
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase; text-align: center;">Children &AMP;Teens</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail"/>
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li><a href="#">Action Advanture</a></li>
+                                <li><a href="#">Fantasy</a></li>
+                                <li><a href="#">Romance</a></li>
+                                <li><a href="#">Knowledge &amp; Learning</a></li>
+                                <li><a href="#">Early Skill Buiding</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase; text-align: center;">Non Fiction</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail">
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li><a href="#" >Biographies &amp; Autobiographies</a></li>
+                                <li><a href="#">Business &amp; Investing</a></li>
+                                <li><a href="#">Health &amp; Fitness</a></li>
+                                <li><a href="#">History &amp; Politics</a></li>
+                                <li><a href="#">Self Help</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1" style="box-shadow:3px 3px 3px 3px #000000;">
+                        <h3 style=" text-transform:uppercase;text-align: center;">Academic</h3>
+                        <a href="#" class="thumbnail">
+                            <img src="/bootstrap/images/kittens.jpg" alt="Generic placeholder thumbnail">
+                        </a>
+                        <div class="caption">
+                            <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                                <li><a href="#">Entrence Exams</a></li>
+                                <li><a href="#">School Books</a></li>
+                                <li><a href="#">Engineering</a></li>
+                                <li><a href="#">Medicine</a></li>
+                                <li><a href="#">Commerce</a></li>
+                            </ul>
+                            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <!-- 
+                <div class="row container-fluid" style="margin-bottom: 50px;">
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h2 style=" text-transform:uppercase">Literature</h2>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li ><a href="#" >Action &amp; Advanture</a></li>
+                       <li ><a href="#">Literary Collection</a></li>
+                       <li ><a href="#">Fantasy</a></li>
+                       <li ><a href="#">Comics &amp; Graphics Novels</a></li>
+                       <li ><a href="#">Indian Writing</a></li>
+                   </ul>
+               </div>
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h2 style=" text-transform:uppercase">Non Fiction</h2>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li><a href="#" >Biographies &amp; Autobiographies</a></li>
+                       <li><a href="#">Business &amp; Investing</a></li>
+                       <li><a href="#">Health &amp; Fitness</a></li>
+                       <li><a href="#">History &amp; Politics</a></li>
+                       <li><a href="#">Self Help</a></li>
+                   </ul>
+               </div>
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h2 style=" text-transform:uppercase">Academic</h2>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li><a href="#">Entrence Exams</a></li>
+                       <li><a href="#">School Books</a></li>
+                       <li><a href="#">Engineering</a></li>
+                       <li><a href="#">Medicine</a></li>
+                       <li><a href="#">Commerce</a></li>
+                    </ul>
+               </div>
+           </div>
+           <div class="row container-fluid">
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h3 style=" text-transform:uppercase">Children &AMP;Teens</h3>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li><a href="#">Action Advanture</a></li>
+                       <li><a href="#">Fantasy</a></li>
+                       <li><a href="#">Romance</a></li>
+                       <li><a href="#">Knowledge &amp; Learning</a></li>
+                       <li><a href="#">Early Skill Buiding</a></li>
+                   </ul>
+               </div>
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h2 style=" text-transform:uppercase">Non Fiction</h2>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li><a href="#" >Biographies &amp; Autobiographies</a></li>
+                       <li><a href="#">Business &amp; Investing</a></li>
+                       <li><a href="#">Health &amp; Fitness</a></li>
+                       <li><a href="#">History &amp; Politics</a></li>
+                       <li><a href="#">Self Help</a></li>
+                   </ul>
+               </div>
+               <div class="col-sm-3 col-sm-offset-1" style="background-color:#ffffff;box-shadow:3px 3px 3px 3px #000000;">
+                   <h2 style=" text-transform:uppercase">Academic</h2>
+                   <img src=""/>
+                   <ul style="overflow:scroll;overflow-x:hidden;height:100px;">
+                       <li><a href="#">Entrance Exams</a></li>
+                       <li><a href="#">School Books</a></li>
+                       <li><a href="#">Engineering</a></li>
+                       <li><a href="#">Medicine</a></li>
+                       <li><a href="#">Commerce</a></li>
+                    </ul>
+               </div>
+           </div>
+                -->
+        </section>
+            <!-- price list start-->
+            <div  style="border:1px solid window;position: absolute;top:115%;left:80%;width:20%; height:73%; padding:0em;padding-top:0em;float:left;margin:0px;">
+                <div class="col-md-12" style="background-image:linear-gradient( 45deg, #ccffcc, #33cc33 ); ">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><h2>Shopping Option</h2></li>
+                        <li><h3>Price</h3></li>
+                        <li><a href="#">Below 200</a></li>
+                        <li><a href="#">200-400</a></li>
+                        <li><a href="#">400-500</a></li>
+                        <li><a href="#">500-600</a></li>
+                        <li><a href="#">600-700</a></li>
+                        <li><a href="#">700-800</a></li>
+                        <li><a href="#">800-900</a></li>
+                        <li><a href="#">900-1000</a></li>
+                        <li><a href="#">Above 1000</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+           <!-- <div style="background-image:linear-gradient( 45deg, #ccffcc, #33cc33 );border:1px solid window;position: absolute;top:120%;left:80%;width:20%; height:73%;margin:0px; float:right;">
+                 
+            </div>
+                <!-- price list end-->
+            <!-- list end -->
+            
+            
+            <!-- footer start -->
+            <footer style="margin-top:45%;">
+              <div style="background-color:#33cc33;" align="center" height: 300px;">
+                  <div id="footer-con">
+                      <table id="footer_table" style="width: 100%; height: 100%; color: #FFFFFF; ">
+                          <tr style="vertical-align:top;">
+                              <td style="width: 22%; border-left:1px solid #666666;">
+                                 <div class="headnig">Navigation</div>
+                                 <ul>
+                                     <li ><a href="#">Home</a></li>
+                                     <li ><a href="#">About Us</a></li>
+                                     <li ><a href="#">Products</a></li>
+                                     <li ><a href="#">Services</a></li>
+                                     <li ><a href="#">IT Staffing Solution</a></li>
+                                     <li ><a href="#">Career</a></li>
+                                 </ul>
+                              </td>
+                              <td style="width: 28%">
+                                  <div class="headnig">Our Services</div>
+                                  <ul>
+                                      <li ><a href="#" >Custom Application Development</a></li>
+                                      <li ><a href="#">Website Development</a></li>
+                                      <li ><a href="#">Corporate Training</a></li>
+                                      <li ><a href="#">Open Source</a></li>
+                                      <li ><a href="#">Data Processing</a></li>
+                                      <li><a href="#"> Internet Marketing</a> </li>
+                                  </ul>
+                              </td>
+                              <td style="width: 22%">
+                                  <div class="headnig">Products</div>
+                                  <ul>
+                                      <li ><a href="#">MSRetail Plus</a></li>
+                                      <li ><a href="#">JavaShiner.com</a></li>
+                                      <li ><a href="#">Avalon</a></li>
+                                  </ul>
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+                  
+                      <div class="site">
+                          <center>
+                              <a href="#">Created By :- www.supersoftitsolution.com</a>
+                          </center>
+                     </div>
+              </div>
+                <a href="#" class="back-to-top glyphicon glyphicon-chevron-up" style="display:inline; font-size:50px">
+                    
+                </a>
+          </footer>
+            <!-- footer end -->
+    </body>
+</html>

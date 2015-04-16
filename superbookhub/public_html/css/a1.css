@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 20, 2015, 7:07:42 PM
+    Author     : krishna
+*/
+
+            .wallpage
+            {
+                
+                background-color:#FFFFFF;
+                border:1px solid whitesmoke;
+                box-shadow:10px 10px 10px 10px whitesmoke;
+                display: inline-block;
+                width:200px;
+                height:200px;
+                position:absolute;
+                margin-left: 10%;
+                zoom:5;
+            }
+            .wall
+            {
+                border:1px solid whitesmoke;
+                box-shadow:5px 5px 5px 5px blanchedalmond;
+                display: inline-block;
+                width:200px;
+                height:200px;
+                position:absolute;
+                margin-left: 2%;
+                z-index: inherit;
+            }
+            
+           /* #feedbackright
+            {
+                background:url("images/feedback_tab_white.png") no-repeat scroll 50% 50% #0066CC;
+                display:block;
+                content: "Feedback";
+                height:90px;
+                line-height:0;
+                padding:5px;
+                position:fixed;
+                right:0;
+                /*left:0;*/
+                /*text-indent:0px;
+                top:50%;
+                width:22px;
+            }
+            
+            a#feedbackright:hover
+            {
+                background-color:#FF8B00;
+            }*/
+                
+                
+            #feedback
+            {
+                background:url("images/feedback_tab_white.png") no-repeat scroll 50% 50% #0066CC;
+                display:block;
+                height: 90px;
+                width: 22px;
+                position: fixed;
+                top: 40%;
+                contant:"Feedback";
+                z-index: 999;
+                //transform: rotate(-90deg);
+                //-webkit-transform: rotate(-90deg);
+                //-moz-transform: rotate(-90deg);
+                //-o-transform: rotate(-90deg);
+                //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+                
+
+#feedback a
+{
+    display: block;
+    background: #f00;
+    height: 15px;
+    width: 70px;
+    padding: 8px 16px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: solid 1px #333;
+    border-left: solid 1px #333;
+    border-right: solid 1px #fff;
+}
+
+ a#feedback:hover
+ {
+     background: #06c;
+ }
